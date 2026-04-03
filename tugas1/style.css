@@ -1,0 +1,178 @@
+
+/* Universal selector (*) menargetkan semua elemen di halaman. */
+/* box-sizing: border-box membuat padding dan border termasuk dalam perhitungan ukuran elemen */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+/* Selector tag (body) menargetkan seluruh isi elemen <body> */
+body {
+    /* Menghilangkan margin bawaan browser agar rapat ke ujung layar */
+    margin: 0;
+    /* Menentukan jenis font (tipografi) dengan fallback otomatis dari OS */
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+        sans-serif;
+    /* Memberi warna latar belakang putih keabuan terang */
+    background-color: #ff4f09;
+    /* Warna teks utama, abu-abu sangat gelap (mendekati hitam) */
+    color: #1e1e1e;
+}
+
+/* Class selector (.) diawali dengan titik, menargetkan elemen dengan atribut class="site-header" */
+.site-header {
+    background: #1100ff;
+    color: rgb(255, 255, 255);
+    /* Teks dalam header berwarna putih */
+    /* Jarak ruang di dalam batas elemen: 1.5rem bagian atas-bawah, 1rem kiri-kanan */
+    padding: 1.5rem 1rem;
+    /* Menjadikan konten di dalamnya rata tengah */
+    text-align: center;
+}
+
+/* Combinator css (spasi): menargetkan <h1> yang berada di dalam elemen ber-class .site-header */
+.site-header h1 {
+    /* margin (luar): margin-bottom 0.5rem, sisi lainnya 0 */
+    margin: 0 0 0.5rem;
+    font-size: 1.6rem;
+}
+
+.site-header .tagline {
+    margin: 0;
+    font-size: 0.95rem;
+}
+
+/* Membuat container batas maksimal konten agar tidak terlalu melebar menutupi seluruh layar monitor besar */
+.container {
+    max-width: 960px;
+    /* Margin auto di sumbu horizontal menempatkan elemen persis ke tengah halaman */
+    margin: 2rem auto;
+    padding: 0 1rem;
+}
+
+/* Styling untuk membuat elemen memiliki tampilan seperti "kartu" (card) melayang */
+.card {
+    background: white;
+    /* border-radius membuat sudut elemen menjadi membulat */
+    border-radius: 8px;
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+    /* box-shadow memberi efek bayangan untuk kesan kedalaman (depth) 3D */
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06);
+}
+
+.card h2 {
+    margin-top: 0;
+}
+
+/* Menggunakan Flexbox, sistem tata letak modern pada CSS */
+.form {
+    display: flex;
+    /* Mengaktifkan layout flex box */
+    /* Menyusun sub-elemen (anak) secara menurun / vertikal dari atas ke bawah */
+    flex-direction: column;
+    /* Memberi jarak konsisten sebesar 1rem antar elemen anak */
+    gap: 1rem;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+}
+
+/* Class pembantu untuk membuat layout checkbox agar horizontal dan rapi */
+.form-group-inline {
+    /* Elemen berderet menyamping (Kiri-Kanan) */
+    flex-direction: row;
+    /* align-items center: menengajahkan secara sumbu sekunder (vertikal) */
+    align-items: center;
+}
+
+label {
+    /* Menebalkan ketebalan font setara dengan "semi-bold" */
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+
+/* Menargetkan input berdasarkan tipenya, agar hanya input teks yang terpengaruh */
+input[type="text"],
+input[type="email"],
+select {
+    padding: 0.5rem 0.6rem;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    /* Garis tepi tipis abu-abu */
+    font-size: 0.95rem;
+}
+
+/* Pseudo-class (:focus) diterapkan saat input sedang hidup/diklik (aktif untuk mengetik) */
+input[type="text"]:focus,
+input[type="email"]:focus,
+select:focus {
+    /* outline dinonaktifkan untuk menghilangkan border glow standar bawaan browser... */
+    outline: none;
+    /* lalu diganti dengan styling border biru buatan kita sendiri */
+    border-color: #4285f4;
+    box-shadow: 0 0 0 2px rgba(66, 133, 244, 0.15);
+}
+
+/* Styling tombol (Button) */
+.btn-primary {
+    /* Lebar tombol akan mengikuti lebar isinya, dan terletak di sebelah kiri-atas (flex-start) */
+    align-self: flex-start;
+    background: #34a853;
+    /* Hijau */
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 0.6rem 1.2rem;
+    font-size: 0.95rem;
+    font-weight: 600;
+    /* cursor: pointer membuat ikon mouse berubah menjadi tangan ketika menyentuh tombol */
+    cursor: pointer;
+}
+
+/* Pseudo-class (:hover) aktif saat mouse kursor digerakkan mengambang tepat *di atas* tombol */
+.btn-primary:hover {
+    /* Warna menjadi sedikit lebih gelap (sebagai umpan balik visual bahwa bisa di klik) */
+    background: #2c8a45;
+}
+
+.message {
+    margin: 0;
+    font-size: 0.85rem;
+}
+
+.message.error {
+    color: #ea4335;
+    /* Tulisan berwarna merah untuk notifikasi pesan error */
+}
+
+.message.success {
+    color: #34a853;
+    /* Tulisan berwarna hijau untuk notifikasi info berhasil */
+}
+
+/* Styling daftar list peserta */
+.participants-list {
+    /* Menghilangkan bullet point default bawaan list <ul> */
+    list-style: none;
+    padding-left: 0;
+    margin: 0;
+}
+
+.participants-list li {
+    padding: 0.4rem 0;
+    /* Memberi garis pembatas antar elemen di sisi bawahnya */
+    border-bottom: 1px solid #eee;
+    font-size: 0.95rem;
+}
+
+.site-footer {
+    text-align: center;
+    padding: 1rem;
+    font-size: 0.8rem;
+    color: #666;
+}

@@ -1,0 +1,111 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Judul tab browser -->
+    <title>GDGoC ITS – Event Registration</title>
+    <!-- Hubungkan file CSS -->
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+    <!-- <header> adalah tag semantik untuk bagian atas (kop) halaman -->
+    <header class="site-header">
+        <h1>GDGoC ITS – Web Foundations Workshop</h1>
+        <p class="tagline">
+            Learn HTML, CSS, and JavaScript by building a real mini project.
+        </p>
+    </header>
+
+    <!-- <main> menandakan konten utama dari halaman web -->
+    <main class="container">
+        <!-- <section> membagi halaman menjadi bagian-bagian atau seksi yang logis -->
+        <section class="card">
+            <h2>About the Event</h2>
+            <p>
+                In this session, we will learn web fundamentals and build a small
+                event registration page using HTML, CSS, and JavaScript.
+            </p>
+        </section>
+
+        <section class="card">
+            <h2>Topics Covered</h2>
+            <!-- <ul> (Unordered List) untuk membuat daftar dengan bullet point -->
+            <ul>
+                <!-- <li> (List Item) adalah item di dalam daftar -->
+                <li>HTML: basic structure and semantic elements</li>
+                <li>CSS: selectors, layout, and styling</li>
+                <li>JavaScript: DOM, events, functions, and arrays</li>
+            </ul>
+        </section>
+
+        <section class="card">
+            <h2>Event Registration</h2>
+
+            <!-- <form> digunakan untuk membuat formulir input data -->
+            <form id="registration-form" class="form">
+                <!-- Dibungkus di dalam div agar elemen label dan input dapat ditata dengan CSS -->
+                <div class="form-group">
+                    <!-- <label> memberikan keterangan untuk elemen <input> -->
+                    <label for="name">Full Name</label>
+                    <input id="name" name="name" type="text" placeholder="Enter your name" required />
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <!-- type="email" otomatis memvalidasi apakah format input berupa email -->
+                    <input id="email" name="email" type="email" placeholder="Enter your email" required />
+                </div>
+
+                <div class="form-group">
+                    <label for="level">Experience Level</label>
+                    <!-- <select> membuat dropdown list -->
+                    <select id="level" name="level">
+                        <!-- <option> adalah pilihan-pilihan di dalam dropdown -->
+                        <option value="Beginner">Beginner</option>
+                        <option value="Intermediate">Intermediate</option>
+                        <option value="Advanced">Advanced</option>
+                    </select>
+                </div>
+
+                <div class="form-group form-group-inline">
+                    <label for="join-wa">
+                        <!-- type="checkbox" membuat kotak centang -->
+                        <input id="join-wa" name="join-wa" type="checkbox" />
+                        Join WhatsApp group
+                    </label>
+                </div>
+
+                <!-- tombol untuk men-submit (mengirim) form -->
+                <button type="submit" class="btn-primary">
+                    Register
+                </button>
+
+                <!-- Paragraf kosong untuk menampilkan pesan sukses atau error melalui JavaScript -->
+                <p id="error-message" class="message error"></p>
+                <p id="success-message" class="message success"></p>
+            </form>
+        </section>
+
+        <section class="card">
+            <h2>Registered Participants</h2>
+            <!-- Bagian list ini kosong dan akan diisi secara dinamis menggunakan JavaScript -->
+            <ul id="participants-list" class="participants-list">
+                <!-- Filled by JavaScript -->
+            </ul>
+        </section>
+    </main>
+
+    <!-- <footer> berisi informasi tambahan di bagian bawah halaman -->
+    <footer class="site-footer">
+        <p>Built for GDGoC ITS Web Foundations.</p>
+    </footer>
+
+    <!-- Menghubungkan file JavaScript agar web menjadi interaktif -->
+    <script src="script.js"></script>
+</body>
+
+</html>
